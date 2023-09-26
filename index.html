@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Momentum</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Personal Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/index.css" />
 </head>
 <body>
-    <div id="container">
-        <img src="images/bg.jpg" alt="background">
-        <h1 id="current-time"></h1>
-        <div id="quotes">
-            <p>TODAY'S QUOTE</p>
-            <h2>Lost time is never found again.</h2>
-        </div>
-    </div>
+    <time id="time"></time>
+    <h1>
+        <span id="greeting">
+        </span>
+        <span id="name" contenteditable="true"></span>
+    </h1>
+    <h2>What is your focus for today?</h2>
+    <h2 id="focus" contenteditable="true"></h2>
+
+    
+    <script src="logic/script.js"></script>
 </body>
 </html>
