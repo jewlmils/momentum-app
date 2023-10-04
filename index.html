@@ -1,24 +1,88 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Personal Assistant</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/index.css" />
-</head>
-<body>
-    <time id="time"></time>
-    <h1>
-        <span id="greeting">
-        </span>
-        <span id="name" contenteditable="true"></span>
-    </h1>
-    <h2>What is your focus for today?</h2>
-    <h2 id="focus" contenteditable="true"></h2>
+<html lang="en">
 
-    
-    <script src="logic/script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum App</title>
+    <!-- links -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- script -->
+    <script src="script.js" defer></script>
+    <script src="clock.js" defer></script>
+    <script src="todo.js" defer></script>
+</head>
+
+<body>
+    <!-- to do -->
+    <div class="todo-container">
+        <div class="todo-div">
+            <div id="todo-label">
+                <label id='todo-label-btn' for="todo">Todo</label>
+            </div>
+
+            <div class="list-container" class="invisible">
+                <div id="list-wrapper">
+                    <input id="todo" type="text" placeholder="✩°｡⋆Task to be done✩⋆⸜🎧✮" />
+                    <button id="add-btn">Add</button>
+                </div>
+                <div id="tasks">
+                    <span class="count-value"></span>
+                </div>
+            </div>
+            <p id="error">Input cannot be empty!</p>
+        </div>
+    </div>
+
+    <!-- digital clock -->
+    <div class="dateTime">
+        <div class="date">
+            ‧𓍢ִ🌷͙֒<span id="dayName">Day</span>,
+            <span id="month">Month</span>
+            <span id="dayNum">00</span>,
+            <span id="year">Year</span>𓍢ִ໋🌷͙
+        </div>
+        <div class="time">
+            <span id="hour" class="digit">00</span>:
+            <span id="minutes" class="digit">00</span>:
+            <span id="seconds" class="digit">00</span>
+            <span id="period">AM</span>
+        </div>
+    </div>
+
+    <!-- input name -->
+    <div id="name-div">
+        <span id="greeting"></span>
+        <span id='entered-name'></span>
+        <input type="text" id="name" class="blank" /><span>˖⁺‧₊˚♡</span>
+    </div>
+
+    <!-- main focus -->
+    <div id="focus-div">
+        <label id="focus-div-label" for="focus">What is your main focus for today?</label>
+        <input type="text" id="focus" class="blank">
+        <h2><span id="focus-result"></span></h2>
+    </div>
+
+    <!-- quote -->
+    <div id="quote-div">
+        <span id="quotes">"<span id="quote-result">life is life</span>"</span>
+
+        <input id="quote" type="text" class="blank">
+        <img id="quote-add" class="" src="https://img.icons8.com/metro/52/ffffff/plus-2-math.png" />
+    </div>
+
+    <!-- change-bg -->
+    <div id="back-ground">
+        <div id="change-bg">
+            <p>Change&nbsp</p>
+            <p>wallpaper</p>
+        </div>
+    </div>
 </body>
+
 </html>

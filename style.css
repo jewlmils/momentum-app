@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: url(images/bg9.jpg) no-repeat center center fixed;
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+}
+
+.dateTime {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 5rem;
+}
+.dateTime .date {
+  font-size: clamp(1rem, 0.286rem + 1.905vw, 2rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: "Pixelify Sans", cursive;
+}
+.dateTime .time {
+  font-size: clamp(5rem, 2.857rem + 5.714vw, 8rem);
+  display: flex;
+  align-items: center;
+}
+.dateTime .time .digit {
+  font-family: "Roboto Mono", monospace;
+}
+.dateTime .time span:not(:last-child) {
+  position: relative;
+  margin: 0 6px;
+  font-weight: 600;
+}
+.dateTime .time span:last-child {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0 5px;
+}
+
+#name-div {
+  color: white;
+  font-size: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+  font-weight: 600;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  white-space: nowrap;
+}
+#name-div .blank {
+  border-inline: none;
+  border-top: none;
+  border-bottom-color: white;
+  border-bottom-width: 1px;
+  outline: none;
+  width: 8rem;
+  height: 2rem;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+  font-weight: 700;
+}
+
+#focus-div {
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+#focus-div #focus-div-label {
+  font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+  margin-top: 1rem;
+  transition: opacity 0.5s ease;
+}
+#focus-div #focus-result {
+  font-size: 3rem;
+}
+#focus-div .blank {
+  margin-top: 0px;
+  width: 25rem;
+  font-size: 2rem;
+  font-weight: 600;
+  border-inline: none;
+  border-top: none;
+  border-bottom-color: white;
+  border-bottom-width: 1px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+#quote-div {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#quote-div #quotes {
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(1rem, 0.643rem + 0.952vw, 1.5rem);
+}
+#quote-div #quote {
+  display: none;
+  margin-top: 1px;
+  font-size: 2rem;
+  font-weight: 300;
+  width: 300px;
+  transition: opacity 1s ease;
+}
+#quote-div:hover {
+  font-weight: 600;
+}
+#quote-div #quote-add {
+  display: none;
+  margin-left: 5px;
+  height: 25px;
+  cursor: pointer;
+}
+#quote-div:hover #quote-add {
+  display: inline;
+}
+#quote-div .blank {
+  border-inline: none;
+  border-top: none;
+  border-bottom-color: white;
+  border-bottom-width: 1px;
+  outline: none;
+  width: 9.375rem;
+  height: 2rem;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+#back-ground {
+  position: fixed;
+  left: 2rem;
+  top: 1rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+#back-ground #change-bg {
+  cursor: pointer;
+  display: flex;
+}
+#back-ground #change-bg:hover {
+  font-weight: 500;
+}
+
+.todo-div {
+  right: 2rem;
+  top: 1rem;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+}
+.todo-div #todo-label {
+  text-align: right;
+  color: white;
+  font-size: 1.2rem;
+}
+.todo-div #todo-label #todo-label-btn {
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+.todo-div #todo-label #todo-label-btn:hover {
+  font-weight: 700;
+}
+.todo-div .list-container {
+  padding: 2rem 2.5rem;
+  background-color: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.8em;
+}
+.todo-div .list-container #list-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 2rem;
+}
+.todo-div .list-container #list-wrapper input {
+  width: 100%;
+  background-color: transparent;
+  color: #9c89b8;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #D1D3D4;
+  padding: 0.5rem 0.5rem;
+}
+.todo-div .list-container #list-wrapper input:focus {
+  outline: none;
+}
+.todo-div .list-container #list-wrapper button {
+  position: relative;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: #efc3e6;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.todo-div .list-container #list-wrapper button:hover {
+  background-color: #f0e6ef;
+}
+.todo-div #tasks {
+  max-height: 50vh;
+  overflow-y: scroll;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  position: relative;
+  padding: 1rem 0.5rem;
+}
+.todo-div .completed {
+  text-decoration: line-through;
+  color: #A0A0A0;
+}
+.todo-div .task {
+  background-color: white;
+  padding: 0.8rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 8fr 2fr 2fr;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  align-items: center;
+  cursor: pointer;
+}
+.todo-div .task:not(first-child) {
+  margin-top: 1rem;
+}
+.todo-div .task input[type=checkbox] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #E1E1E1;
+}
+.todo-div .task input[type=checkbox]:before {
+  content: "";
+  position: absolute;
+  transform: -50%, -50%;
+  top: 50%;
+  left: 50%;
+}
+.todo-div .task input[type=checkbox]:checked {
+  background-color: #9c89b8;
+  border-color: #9c89b8;
+}
+.todo-div .task span {
+  font: 0.9rem;
+  font-weight: 400;
+  word-break: break-all;
+  color: #9c89b8;
+}
+.todo-div .task button {
+  color: white;
+  width: 100%;
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.todo-div .task .edit {
+  background-color: #9c89b8;
+}
+.todo-div .task .delete {
+  background-color: #f0a6ca;
+}
+.todo-div #error {
+  text-align: center;
+  background-color: white;
+  color: #f0a6ca;
+  margin-top: 1rem;
+  padding: 0.8rem 0;
+  border-radius: 0.8rem;
+  display: none;
+}
+.todo-div .clicked {
+  font-weight: 500;
+}
+.todo-div .visible {
+  display: block;
+}
+.todo-div .invisible {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .todo-div {
+    left: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

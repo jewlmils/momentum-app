@@ -1,0 +1,400 @@
+// variables
+$primarycolor-1: #9c89b8;
+$primarycolor-2: #f0a6ca;
+$primarycolor-3: #efc3e6;
+$primarycolor-4: #f0e6ef;
+$primarycolor-5: #b8bedd;
+$primarycolor-6: #ffff;
+$primarycolor-7: #0000;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    // outline: 1px solid red;
+}
+
+body {
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background: url(images/bg9.jpg) no-repeat center center fixed;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+}
+
+// clock
+.dateTime {
+    color: $primarycolor-6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 5rem;
+
+    .date {
+        font-size: clamp(1rem, 0.286rem + 1.905vw, 2rem);
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 3px;
+        font-family: 'Pixelify Sans', cursive;
+    }
+
+    .time {
+        font-size: clamp(5rem, 2.857rem + 5.714vw, 8rem);
+        display: flex;
+        align-items: center;
+
+        .digit {
+            font-family: "Roboto Mono", monospace;
+        }
+
+        span:not(:last-child) {
+            position: relative;
+            margin: 0 6px;
+            font-weight: 600;
+        }
+
+        span:last-child {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0 5px;
+        }
+    }
+}
+
+// name
+#name-div {
+    color: $primarycolor-6;
+    font-size: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+    font-weight: 600;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    white-space: nowrap;
+
+    .blank {
+        border-inline: none;
+        border-top: none;
+        border-bottom-color: $primarycolor-6;
+        border-bottom-width: 1px;
+        outline: none;
+        width: 8rem;
+        height: 2rem;
+        background-color: transparent;
+        color: $primarycolor-6;
+        text-align: center;
+        font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+        font-weight: 700;
+    }
+}
+
+// focus
+#focus-div {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $primarycolor-6;
+
+    #focus-div-label {
+        font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+        margin-top: 1rem;
+        transition: opacity 0.5s ease;
+    }
+
+    #focus-result {
+        font-size: 3rem;
+    }
+
+    .blank {
+        margin-top: 0px;
+        width: 25rem;
+        font-size: 2rem;
+        font-weight: 600;
+        border-inline: none;
+        border-top: none;
+        border-bottom-color: $primarycolor-6;
+        border-bottom-width: 1px;
+        outline: none;
+        background-color: transparent;
+        color: $primarycolor-6;
+        text-align: center;
+        padding: 0.5rem;
+    }
+}
+
+// quotes
+#quote-div {
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primarycolor-6;
+
+    #quotes {
+        text-align: center;
+        font-style: italic;
+        font-size: clamp(1rem, 0.643rem + 0.952vw, 1.5rem);
+    }
+
+    #quote {
+        display: none;
+        margin-top: 1px;
+        font-size: 2rem;
+        font-weight: 300;
+        width: 300px;
+        transition: opacity 1s ease;
+    }
+
+    &:hover {
+        font-weight: 600;
+    }
+
+    #quote-add {
+        display: none;
+        margin-left: 5px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    &:hover #quote-add {
+        display: inline;
+    }
+
+    .blank {
+        border-inline: none;
+        border-top: none;
+        border-bottom-color: $primarycolor-6;
+        border-bottom-width: 1px;
+        outline: none;
+        width: 9.375rem;
+        height: 2rem;
+        background-color: transparent;
+        color: $primarycolor-6;
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        padding: 0.5rem;
+    }
+}
+
+// bg
+#back-ground {
+    position: fixed;
+    left: 2rem;
+    top: 1rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primarycolor-6;
+    font-size: 1.2rem;
+
+    #change-bg {
+        cursor: pointer;
+        display: flex;
+
+        &:hover {
+            font-weight: 500;
+        }
+    }
+}
+
+// todo
+.todo-div {
+    right: 2rem;
+    top: 1rem;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999;
+
+    #todo-label {
+        text-align: right;
+        color: $primarycolor-6;
+        font-size: 1.2rem;
+
+        #todo-label-btn {
+            padding-bottom: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .list-container {
+        padding: 2rem 2.5rem;
+        background-color: $primarycolor-6;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+        border-radius: 0.8em;
+
+        #list-wrapper {
+            position: relative;
+            display: grid;
+            grid-template-columns: 8fr 4fr;
+            gap: 2rem;
+
+            input {
+                width: 100%;
+                background-color: transparent;
+                color: $primarycolor-1;
+                font-size: 1rem;
+                border: none;
+                border-bottom: 2px solid #D1D3D4;
+                padding: 0.5rem 0.5rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                position: relative;
+                border-radius: 0.5rem;
+                font-weight: 500;
+                font-size: 1rem;
+                background-color: $primarycolor-3;
+                border: none;
+                color: $primarycolor-6;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $primarycolor-4;
+                }
+            }
+        }
+    }
+
+    #tasks {
+        max-height: 50vh;
+        overflow-y: scroll;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        position: relative;
+        padding: 1rem 0.5rem;
+
+        // #pending-task span {
+        //     color: #5A95FF;
+        // }
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: #A0A0A0;
+    }
+
+    .task {
+        background-color: $primarycolor-6;
+        padding: 0.8rem 1rem;
+        display: grid;
+        grid-template-columns: 1fr 8fr 2fr 2fr;
+        gap: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        align-items: center;
+        cursor: pointer;
+
+        &:not(first-child) {
+            margin-top: 1rem;
+        }
+
+        input[type="checkbox"] {
+            position: relative;
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 2px solid #E1E1E1;
+
+            &:before {
+                content: "";
+                position: absolute;
+                transform: (-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
+
+            &:checked {
+                background-color: $primarycolor-1;
+                border-color: $primarycolor-1;
+            }
+        }
+
+        span {
+            font: 0.9rem;
+            font-weight: 400;
+            word-break: break-all;
+            color: $primarycolor-1;
+        }
+
+        button {
+            color: $primarycolor-6;
+            width: 100%;
+            padding: 1rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .edit {
+            background-color: $primarycolor-1;
+        }
+
+        .delete {
+            background-color: $primarycolor-2;
+        }
+    }
+
+    #error {
+        text-align: center;
+        background-color: $primarycolor-6;
+        color: $primarycolor-2;
+        margin-top: 1rem;
+        padding: 0.8rem 0;
+        border-radius: 0.8rem;
+        display: none;
+    }
+
+    .clicked {
+        font-weight: 500;
+    }
+
+    .visible {
+        display: block;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+}
+
+// media q
+@media (max-width: 576px) {
+    .todo-div {
+        left: 2rem;
+    }
+}
